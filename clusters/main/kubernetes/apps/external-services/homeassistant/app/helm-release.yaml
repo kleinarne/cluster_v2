@@ -50,10 +50,4 @@ spec:
             certificateIssuer: domain-0-le-prod
         hosts:
           - host: homeassistant.${DOMAIN_0_LOCAL}
-            paths:
-              - path: /
-                pathType: Prefix
           - host: homeassistant.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
