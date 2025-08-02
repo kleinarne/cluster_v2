@@ -90,6 +90,10 @@ spec:
               - path: /
                 pathType: Prefix
         integrations:
+          traefik:
+            enabled: false
+          nginx:
+            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
