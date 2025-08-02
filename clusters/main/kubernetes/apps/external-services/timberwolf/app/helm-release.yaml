@@ -48,6 +48,8 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         integrations:
+          nginx:
+            enabled: true
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
