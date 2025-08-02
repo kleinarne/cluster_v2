@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: es_timberwolf
+  name: es-timberwolf
   namespace: external-services
 spec:
   interval: 15m
@@ -43,7 +43,6 @@ spec:
             protocol: https
     ingress:
       main:
-        enabled: true
         ingressClassName: internal
         integrations:
           certManager:
