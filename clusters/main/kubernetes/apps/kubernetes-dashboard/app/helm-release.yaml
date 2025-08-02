@@ -30,6 +30,9 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    TZ: Europe/Berlin
+    global:
+      stopAll: false
     service:
       main:
         type: LoadBalancer
@@ -41,9 +44,10 @@ spec:
       main:
         enabled: true
         ingressClassName: internal
+        hosts:
+          - host: kubernetes-dashboard.${DOMAIN_0}
         integrations:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-        hosts:
-          - host: kubernetes-dashboard.${DOMAIN_0}
+
