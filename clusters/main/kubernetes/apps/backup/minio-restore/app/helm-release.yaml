@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: es-homeassistant
-  namespace: external-services
+  name: minio-restore
+  namespace: minio-restore
 spec:
   interval: 15m
   chart:
     spec:
-      chart: external-service
-      version: 16.2.0
+      chart: minio
+      version: 14.2.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -31,25 +31,30 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
-    service:
+    global:
+      stopAll: false
+    workload:
       main:
-        enabled: true
-        type: ExternalIP
-        externalIP: ${HOMEASSISTANT_IP}
-        ports:
-          main:
-            enabled: true
-            port: 8123
-            protocol: http
+        podSpec:
+          containers:
+            main:
+              env:
+                MINIO_ROOT_USER: ${MINIO_USER}
+                MINIO_ROOT_PASSWORD: ${MINIO_PASSWORD}
+    persistence:
+      config:
+        type: nfs
+        path: ${MINIO_RESTORE_NFS_PATH}
+        server: ${TRUENAS_IP}
     ingress:
       main:
         enabled: true
-        ingressClassName: internal
+        hosts:
+          - host: minio-restore.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
-#          nginx:
-#            enabled: true
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
-        hosts:
-          - host: homeassistant.${DOMAIN_0}
