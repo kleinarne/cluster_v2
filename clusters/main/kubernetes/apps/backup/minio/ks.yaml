@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: minio-restore
+  name: minio
   namespace: flux-system
 spec:
   interval: 10m
-  path: clusters/main/kubernetes/apps/backup/minio-restore/app
+  path: clusters/main/kubernetes/apps/backup/minio/app
   prune: true
   sourceRef:
     kind: GitRepository
