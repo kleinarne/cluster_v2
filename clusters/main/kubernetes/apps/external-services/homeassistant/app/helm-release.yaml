@@ -45,11 +45,11 @@ spec:
         enabled: true
         ingressClassName: internal
         annotations:
-          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
         integrations:
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
         hosts:
-#          - host: homeassistant.${DOMAIN_0_LOCAL}
+          - host: homeassistant.${DOMAIN_0_LOCAL}
           - host: homeassistant.${DOMAIN_0}
