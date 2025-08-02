@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: minio-restore
-  namespace: minio-restore
+  name: minio
+  namespace: minio
 spec:
   interval: 15m
   chart:
