@@ -50,7 +50,7 @@ spec:
         annotations:
           cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
-        password: ${PAPERLESS_CNPG_PASSWORD}
+        #password: ${PAPERLESS_CNPG_PASSWORD}
         backups:
           enabled: false
           credentials: minio-restore
