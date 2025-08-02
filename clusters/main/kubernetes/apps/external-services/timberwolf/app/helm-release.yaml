@@ -33,6 +33,7 @@ spec:
     TZ: Europe/Berlin
     service:
       main:
+        enabled: true
         type: ExternalIP
         externalIP: ${TIMBERWOLF_IP}
         ports:
