@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: unifi
-      version: 24.3.0
+      version: 23.3.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -65,6 +65,10 @@ spec:
         hosts:
           - host: unifi.${DOMAIN_0}
         integrations:
+          traefik:
+            enabled: false
+          nginx:
+            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
