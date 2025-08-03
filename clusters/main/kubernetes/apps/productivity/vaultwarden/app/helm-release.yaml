@@ -55,8 +55,8 @@ spec:
         installationKey: ${VAULTWARDEN_PUSHKEY}
     cnpg:
       main:
-        annotations:
-          cnpg.io/skipEmptyWalArchiveCheck: "enabled"
+        #annotations:
+        #  cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
         password: ${VAULTWARDEN_CNPG_PASSWORD}
         backups:
