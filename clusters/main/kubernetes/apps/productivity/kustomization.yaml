@@ -5,4 +5,3 @@ resources:
   - paperless-ngx/ks.yaml
   - actualserver/ks.yaml
   - immich/ks.yaml
-  - vaultwarden/ks.yaml

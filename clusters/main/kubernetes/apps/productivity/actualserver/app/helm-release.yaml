@@ -1,0 +1,70 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: actualserver
+  namespace: actualserver
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: actualserver
+      version: 13.7.1
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/Berlin
+    global:
+      stopAll: false
+    persistence:
+      data:
+        volsync:
+          - name: data
+            type: restic
+            credentials: minio-restore
+            dest:
+              enabled: true
+            src:
+              enabled: false
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+          - host: actualserver.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          traefik:
+            enabled: false
+          nginx:
+            enabled: true
+          certManager:
+            certificateIssuer: domain-0-le-prod
+            enabled: true
+    credentials:
+      minio-restore:
+        type: s3
+        url: ${MINIORESTORE_S3_URL}
+        bucket: ${MINIORESTORE_S3_BUCKET}-actualserver
+        accessKey: ${MINIORESTORE_S3_ACCESSKEY}
+        secretKey: ${MINIORESTORE_S3_SECRETKEY}
+        encrKey: ${MINIORESTORE_S3_ENCRKEY}
