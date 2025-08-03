@@ -1,0 +1,97 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: immich
+  namespace: immich
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: immich
+      version: 18.3.3
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/Berlin
+    global:
+      stopAll: false
+    cnpg:
+      main:
+        annotations:
+          cnpg.io/skipEmptyWalArchiveCheck: "enabled"
+        mode: recovery
+        password: ${IMMICH_CNPG_PASSWORD}
+        backups:
+          enabled: false
+          credentials: minio-restore
+        recovery:
+          enabled: true
+          credentials: minio-restore
+    persistence:
+      library:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/library
+      uploads:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/uploads
+      backups:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/backups
+      thumbs:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/thumbs
+      profile:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/profile
+      video:
+        type: nfs
+        server: ${TRUENAS_IP}
+        path: ${IMMICH_NFS_PATH}/video
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+          - host: immich.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          traefik:
+            enabled: false
+          nginx:
+            enabled: true
+          certManager:
+            certificateIssuer: domain-0-le-prod
+            enabled: true
+    credentials:
+      minio-restore:
+        type: s3
+        url: ${MINIORESTORE_S3_URL}
+        bucket: ${MINIORESTORE_S3_BUCKET}-immich
+        accessKey: ${MINIORESTORE_S3_ACCESSKEY}
+        secretKey: ${MINIORESTORE_S3_SECRETKEY}
+        encrKey: ${MINIORESTORE_S3_ENCRKEY}

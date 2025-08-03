@@ -5,3 +5,4 @@ resources:
   - backup
   - external-services
   - productivity
+  - infrastructure
