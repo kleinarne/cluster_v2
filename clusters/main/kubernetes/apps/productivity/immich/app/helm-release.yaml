@@ -38,11 +38,11 @@ spec:
         mode: recovery
         password: ${IMMICH_CNPG_PASSWORD}
         backups:
-          enabled: false
-          credentials: minio-restore
+          enabled: true
+          credentials: minio
         recovery:
           enabled: true
-          credentials: minio-restore
+          credentials: minio
     persistence:
       library:
         type: nfs
@@ -74,16 +74,15 @@ spec:
         ingressClassName: internal
         hosts:
           - host: immich.${DOMAIN_0}
-          - host: immich.lan.${DOMAIN_0}
         integrations:
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
     credentials:
-      minio-restore:
+      minio:
         type: s3
-        url: ${MINIORESTORE_S3_URL}
-        bucket: ${MINIORESTORE_S3_BUCKET}-immich
-        accessKey: ${MINIORESTORE_S3_ACCESSKEY}
-        secretKey: ${MINIORESTORE_S3_SECRETKEY}
-        encrKey: ${MINIORESTORE_S3_ENCRKEY}
+        url: ${MINIO_S3_URL}
+        bucket: ${MINIO_S3_BUCKET}-immich
+        accessKey: ${MINIO_S3_ACCESSKEY}
+        secretKey: ${MINIO_S3_SECRETKEY}
+        encrKey: ${MINIO_S3_ENCRKEY}

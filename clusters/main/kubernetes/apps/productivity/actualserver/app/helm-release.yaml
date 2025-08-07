@@ -38,11 +38,11 @@ spec:
         volsync:
           - name: data
             type: restic
-            credentials: minio-restore
+            credentials: minio
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
     ingress:
       main:
         enabled: true
@@ -61,10 +61,10 @@ spec:
             certificateIssuer: domain-0-le-prod
             enabled: true
     credentials:
-      minio-restore:
+      minio:
         type: s3
-        url: ${MINIORESTORE_S3_URL}
-        bucket: ${MINIORESTORE_S3_BUCKET}-actualserver
-        accessKey: ${MINIORESTORE_S3_ACCESSKEY}
-        secretKey: ${MINIORESTORE_S3_SECRETKEY}
-        encrKey: ${MINIORESTORE_S3_ENCRKEY}
+        url: ${MINIO_S3_URL}
+        bucket: ${MINIO_S3_BUCKET}-actualserver
+        accessKey: ${MINIO_S3_ACCESSKEY}
+        secretKey: ${MINIO_S3_SECRETKEY}
+        encrKey: ${MINIO_S3_ENCRKEY}
