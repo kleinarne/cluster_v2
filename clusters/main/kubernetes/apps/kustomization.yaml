@@ -4,5 +4,6 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - backup
   - external-services
+  - media
   - productivity
   - infrastructure
