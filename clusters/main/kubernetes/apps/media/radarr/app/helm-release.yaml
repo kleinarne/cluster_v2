@@ -38,11 +38,11 @@ spec:
         volsync:
           - name: config
             type: restic
-            credentials: minio
+            credentials: minio-restore
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
       media:
         enabled: true
         existingClaim: media-nfs-pvc
@@ -71,3 +71,10 @@ spec:
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
+      minio-restore:
+        type: s3
+        url: ${MINIORESTORE_S3_URL}
+        bucket: ${MINIORESTORE_S3_BUCKET}-sonarr
+        accessKey: ${MINIORESTORE_S3_ACCESSKEY}
+        secretKey: ${MINIORESTORE_S3_SECRETKEY}
+        encrKey: ${MINIORESTORE_S3_ENCRKEY}

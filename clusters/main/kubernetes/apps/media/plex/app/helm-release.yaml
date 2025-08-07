@@ -41,11 +41,11 @@ spec:
         volsync:
           - name: config
             type: restic
-            credentials: minio
+            credentials: minio-restore
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
       media:
         enabled: true
         existingClaim: media-nfs-pvc
