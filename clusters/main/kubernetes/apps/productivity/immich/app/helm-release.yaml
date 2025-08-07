@@ -74,6 +74,7 @@ spec:
         ingressClassName: internal
         hosts:
           - host: immich.${DOMAIN_0}
+          - host: immich.lan.${DOMAIN_0}
         integrations:
           certManager:
             certificateIssuer: domain-0-le-prod
