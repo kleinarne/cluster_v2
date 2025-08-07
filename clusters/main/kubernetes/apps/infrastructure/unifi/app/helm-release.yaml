@@ -72,6 +72,7 @@ spec:
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
+    credentials:
       minio:
         type: s3
         url: ${MINIO_S3_URL}
