@@ -35,8 +35,6 @@ spec:
       stopAll: false
     cnpg:
       main:
-        annotations:
-          cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
         password: ${IMMICH_CNPG_PASSWORD}
         backups:
@@ -77,10 +75,6 @@ spec:
         hosts:
           - host: immich.${DOMAIN_0}
         integrations:
-          traefik:
-            enabled: false
-          nginx:
-            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
