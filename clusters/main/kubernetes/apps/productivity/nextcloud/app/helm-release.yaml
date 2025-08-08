@@ -48,8 +48,6 @@ spec:
           - en_US
     cnpg:
       main:
-        annotations:
-          cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
