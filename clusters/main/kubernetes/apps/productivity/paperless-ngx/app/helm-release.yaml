@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: paperless-ngx
-      version: 10.2.1
+      version: 11.5.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -47,8 +47,6 @@ spec:
                 PAPERLESS_OCR_LANGUAGES: "eng deu"
     cnpg:
       main:
-        annotations:
-          cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
         password: ${PAPERLESS_CNPG_PASSWORD}
         backups:
