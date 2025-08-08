@@ -47,15 +47,27 @@ spec:
       comm:
         type: LoadBalancer
         loadBalancerIP: ${UNIFI_IP}
+        integrations:
+          metallb:
+            enabled: true
       stun:
         type: LoadBalancer
         loadBalancerIP: ${UNIFI_IP}
+        integrations:
+          metallb:
+            enabled: true
       speedtest:
         type: LoadBalancer
         loadBalancerIP: ${UNIFI_IP}
+        integrations:
+          metallb:
+            enabled: true
       guestportal:
         type: LoadBalancer
         loadBalancerIP: ${UNIFI_IP}
+        integrations:
+          metallb:
+            enabled: true
     ingress:
       main:
         enabled: true

@@ -57,6 +57,9 @@ spec:
       torrent:
         type: LoadBalancer
         loadBalancerIP: ${QBITTORRENT_IP}
+        integrations:
+          metallb:
+            enabled: true
         ports:
           torrent:
             port: 51482
