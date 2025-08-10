@@ -77,7 +77,6 @@ spec:
               certificateIssuer: domain-0-le-prod
           hosts:
             - host: cs.plex.${DOMAIN_0}
-              paths:
     credentials:
       minio:
         type: s3
