@@ -78,7 +78,7 @@ spec:
               enabled: true
               certificateIssuer: domain-0-le-prod
           hosts:
-            - host: cs.plex.${DOMAIN_0}
+            - host: cs-plex.${DOMAIN_0}
       minio:
         type: s3
         url: ${MINIO_S3_URL}
