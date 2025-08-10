@@ -62,17 +62,22 @@ spec:
         enabled: true
         hosts:
           - host: plex.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
         integrations:
-          traefik:
-            enabled: false
-          nginx:
-            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
+          hosts:
+            - host: cs.plex.${DOMAIN_0}
+              paths:
     credentials:
       minio:
         type: s3
