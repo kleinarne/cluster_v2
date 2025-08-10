@@ -67,6 +67,19 @@ spec:
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
+    addons:
+      codeserver:
+        enabled: true
+        ingress:
+          enabled: true
+          ingressClassName: internal
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
+          hosts:
+            - host: cs.plex.${DOMAIN_0}
+    credentials:
       minio:
         type: s3
         url: ${MINIO_S3_URL}
@@ -74,3 +87,5 @@ spec:
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
+
+
