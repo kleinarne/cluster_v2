@@ -70,12 +70,6 @@ spec:
     addons:
       codeserver:
         enabled: true
-        service:
-          enabled: true
-          ports:
-            codeserver:
-              enabled: true
-              port: 12321
         ingress:
           enabled: true
           ingressClassName: internal
