@@ -69,14 +69,14 @@ spec:
     addons:
       codeserver:
         enabled: true
+        hosts:
+          - host: cs.plex.${DOMAIN_0}
         ingress:
           enabled: true
           integrations:
             certManager:
               enabled: true
               certificateIssuer: domain-0-le-prod
-          hosts:
-            - host: cs.plex.${DOMAIN_0}
     credentials:
       minio:
         type: s3
