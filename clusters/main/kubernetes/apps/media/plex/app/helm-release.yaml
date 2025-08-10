@@ -60,6 +60,7 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
         hosts:
           - host: plex.${DOMAIN_0}
         integrations:
@@ -77,6 +78,7 @@ spec:
               port: 12321
         ingress:
           enabled: true
+          ingressClassName: internal
           integrations:
             certManager:
               enabled: true
