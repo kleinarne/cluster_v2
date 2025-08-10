@@ -75,7 +75,6 @@ spec:
             codeserver:
               enabled: true
               port: 12321
-              targetPort: 12321
         ingress:
           enabled: true
           integrations:
@@ -84,9 +83,6 @@ spec:
               certificateIssuer: domain-0-le-prod
           hosts:
             - host: cs.plex.${DOMAIN_0}
-              paths:
-                - path: /
-                  pathType: Prefix
       minio:
         type: s3
         url: ${MINIO_S3_URL}
