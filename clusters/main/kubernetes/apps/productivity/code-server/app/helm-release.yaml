@@ -47,7 +47,6 @@ spec:
         ingressClassName: internal
         hosts:
           - host: code-server.${DOMAIN_0}
-            paths:
         integrations:
           certManager:
             certificateIssuer: domain-0-le-prod
