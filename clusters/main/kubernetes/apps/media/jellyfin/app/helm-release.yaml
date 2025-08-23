@@ -30,6 +30,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    autodiscovery:
+      enabled: true
     TZ: Europe/Berlin
     global:
       stopAll: false
