@@ -43,6 +43,15 @@ spec:
               enabled: true
             src:
               enabled: true
+      data:
+        volsync:
+          - name: data
+            type: restic
+            credentials: minio
+            dest:
+              enabled: true
+            src:
+              enabled: true
     service:
       comm:
         type: LoadBalancer
