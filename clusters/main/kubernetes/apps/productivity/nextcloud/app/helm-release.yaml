@@ -51,8 +51,14 @@ spec:
         mode: recovery
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
-          enabled: true
+          enabled: false
           credentials: minio
+          scheduledBackups:
+            - name: daily-backup
+              schedule: "0 38 0 * * *"
+              backupOwnerReference: self
+              immediate: true
+              suspend: false
         recovery:
           enabled: true
           credentials: minio
@@ -65,7 +71,9 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 41 0 * * *
       data:
         type: nfs
         server: ${TRUENAS_IP}
@@ -78,7 +86,9 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 43 0 * * *
     ingress:
       main:
         enabled: true
