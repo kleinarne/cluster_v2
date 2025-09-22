@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - cloudflared/ks.yaml
   - protonmail-bridge/ks.yaml
+  - unifi/ks.yaml
