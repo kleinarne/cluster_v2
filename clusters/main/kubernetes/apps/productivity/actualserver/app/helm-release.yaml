@@ -42,7 +42,9 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 30 0 * * *
     ingress:
       main:
         enabled: true
@@ -53,8 +55,6 @@ spec:
               - path: /
                 pathType: Prefix
         integrations:
-          traefik:
-            enabled: false
           nginx:
             enabled: true
           certManager:
