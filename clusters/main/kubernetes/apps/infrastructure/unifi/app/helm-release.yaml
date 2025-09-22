@@ -42,7 +42,9 @@ spec:
             dest:
               enabled: false
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 32 0 * * *
     service:
       comm:
         type: LoadBalancer
