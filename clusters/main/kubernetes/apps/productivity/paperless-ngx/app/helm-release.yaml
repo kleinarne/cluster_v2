@@ -70,7 +70,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
               trigger:
                 schedule: 48 0 * * *
       media:
@@ -81,7 +81,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
               trigger:
                 schedule: 50 0 * * *
       consume:
