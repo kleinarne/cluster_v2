@@ -35,3 +35,21 @@ spec:
       config:
         enabled: true
         mountPath: "/root"
+        volsync:
+          - name: config
+            type: restic
+            credentials: minio
+            dest:
+              enabled: false
+            src:
+              enabled: true
+              trigger:
+                schedule: 15 0 * * *
+    credentials:
+      minio:
+        type: s3
+        url: ${MINIO_S3_URL}
+        bucket: ${MINIO_S3_BUCKET}-protonmailbridge
+        accessKey: ${MINIO_S3_ACCESSKEY}
+        secretKey: ${MINIO_S3_SECRETKEY}
+        encrKey: ${MINIO_S3_ENCRKEY}
