@@ -55,13 +55,17 @@ spec:
         installationKey: ${VAULTWARDEN_PUSHKEY}
     cnpg:
       main:
-        #annotations:
-        #  cnpg.io/skipEmptyWalArchiveCheck: "enabled"
         mode: recovery
         password: ${VAULTWARDEN_CNPG_PASSWORD}
         backups:
-          enabled: true
+          enabled: false
           credentials: minio
+          scheduledBackups:
+            - name: daily-backup
+              schedule: "0 25 0 * * *"
+              backupOwnerReference: self
+              immediate: true
+              suspend: false
         recovery:
           enabled: true
           credentials: minio
@@ -75,6 +79,8 @@ spec:
               enabled: true
             src:
               enabled: true
+              trigger:
+                schedule: 27 0 * * *
     ingress:
       main:
         enabled: true
