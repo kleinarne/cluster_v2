@@ -5,5 +5,5 @@ resources:
   - backup
   - external-services
   - media
-#  - productivity
+  - productivity
   - infrastructure

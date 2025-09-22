@@ -64,7 +64,9 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 50 0 * * *
       media:
         volsync:
           - name: documents
@@ -73,7 +75,9 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
+              trigger:
+                schedule: 53 0 * * *
       consume:
         type: nfs
         server: ${TRUENAS_IP}
