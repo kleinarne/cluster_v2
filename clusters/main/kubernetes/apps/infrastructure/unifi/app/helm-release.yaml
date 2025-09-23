@@ -86,7 +86,7 @@ spec:
       minio:
         type: s3
         url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_BUCKET}-unifi
+        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-unifi
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}

@@ -124,7 +124,7 @@ spec:
       minio:
         type: s3
         url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_BUCKET}-nextcloud
+        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-nextcloud
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
