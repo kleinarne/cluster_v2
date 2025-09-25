@@ -8,7 +8,7 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: minio
+      chart: grafana
       version: 19.8.0
       sourceRef:
         kind: HelmRepository
