@@ -29,6 +29,9 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  resources:
+    limits:
+      cpu: 1000m
   values:
     TZ: Europe/Berlin
     global:
