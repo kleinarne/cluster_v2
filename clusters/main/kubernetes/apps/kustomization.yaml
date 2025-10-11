@@ -7,4 +7,4 @@ resources:
   - media
   - productivity
   - infrastructure
-  - observability
+#  - observability
