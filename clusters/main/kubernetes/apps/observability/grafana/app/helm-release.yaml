@@ -31,6 +31,14 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              resources:
+                requests:
+                  cpu: 250m
     global:
       stopAll: false
     ingress:

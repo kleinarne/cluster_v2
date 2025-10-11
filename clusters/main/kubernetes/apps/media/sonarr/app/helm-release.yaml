@@ -33,6 +33,14 @@ spec:
     TZ: Europe/Berlin
     global:
       stopAll: false
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              resources:
+                requests:
+                  cpu: 75m
     persistence:
       config:
         volsync:
