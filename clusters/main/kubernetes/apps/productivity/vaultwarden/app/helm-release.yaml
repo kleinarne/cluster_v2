@@ -44,7 +44,7 @@ spec:
         port: 25
         authMechanism: Login
         heloName: ""
-        timeout: 15
+        timeout: 16
         invalidHostname: true
         invalidCertificate: true
         user: ${SMTP_USERNAME}
