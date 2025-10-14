@@ -48,7 +48,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${SMPT_IP}
+        loadBalancerIP: ${SMTP_IP}
         integrations:
           metallb:
             enabled: true
