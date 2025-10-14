@@ -46,7 +46,7 @@ spec:
               trigger:
                 schedule: 15 0 * * *
     service:
-      main:
+      smtp:
         type: LoadBalancer
         loadBalancerIP: ${SMTP_IP}
         integrations:
