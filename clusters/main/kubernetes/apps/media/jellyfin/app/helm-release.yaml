@@ -54,7 +54,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${PLEX_IP}
+        loadBalancerIP: ${JELLYFIN_IP}
         integrations:
           metallb:
             enabled: true

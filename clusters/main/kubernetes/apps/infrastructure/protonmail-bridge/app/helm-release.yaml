@@ -45,6 +45,13 @@ spec:
               enabled: true
               trigger:
                 schedule: 15 0 * * *
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: ${SMPT_IP}
+        integrations:
+          metallb:
+            enabled: true
     credentials:
       minio:
         type: s3
