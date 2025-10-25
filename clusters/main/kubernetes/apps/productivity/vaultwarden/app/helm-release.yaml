@@ -40,7 +40,7 @@ spec:
         host: ${SMTP_SERVER}
         from: ${SMTP_SENDER_EMAIL}
         fromName: ${SMTP_SENDER_NAME}
-        security: starttls
+        security: force_tls
         port: 587
         authMechanism: Login
         heloName: ""
