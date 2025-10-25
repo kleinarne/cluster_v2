@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: minio
-      version: 16.7.1
+      version: 16.11.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
