@@ -30,9 +30,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    workload:
-      main:
-        replicas: 0
     TZ: Europe/Berlin
     global:
       stopAll: false
