@@ -38,6 +38,7 @@ spec:
       stopAll: false
     cnpg:
       main:
+        type: vectorchord
         mode: recovery
         password: ${IMMICH_CNPG_PASSWORD}
         backups:
