@@ -55,8 +55,6 @@ spec:
               - path: /
                 pathType: Prefix
         integrations:
-          nginx:
-            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true

@@ -33,14 +33,6 @@ spec:
     TZ: Europe/Berlin
     global:
       stopAll: false
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              resources:
-                requests:
-                  cpu: 75m
     persistence:
       config:
         volsync:
@@ -62,14 +54,7 @@ spec:
         enabled: true
         hosts:
           - host: sonarr.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
         integrations:
-          traefik:
-            enabled: false
-          nginx:
-            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
