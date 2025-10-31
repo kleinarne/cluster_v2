@@ -36,12 +36,6 @@ spec:
         env:
           GF_SECURITY_ADMIN_USER: ${GRAFANA_USERNAME}
           GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
-        podSpec:
-          containers:
-            main:
-              resources:
-                requests:
-                  cpu: 250m
     global:
       stopAll: false
     ingress:
