@@ -33,9 +33,6 @@ spec:
     TZ: Europe/Berlin
     global:
       stopAll: false
-    resources:
-      limits:
-        cpu: 1000m
     persistence:
       data:
         volsync:

@@ -44,6 +44,9 @@ spec:
         ingressClassName: internal
         hosts:
           - host: grafana.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           certManager:
             enabled: true
