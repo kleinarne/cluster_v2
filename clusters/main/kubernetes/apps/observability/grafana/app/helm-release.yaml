@@ -58,9 +58,9 @@ spec:
           failOnError: false
           b64content: false
           datasource:
-            - name: "${DS_PROMETHEUS}"
+            - name: "$${DS_PROMETHEUS}"
               value: Prometheus
-            - name: "${VAR_REPLICATIONDESTNAME}"
+            - name: "$${VAR_REPLICATIONDESTNAME}"
               value: ".*-dst|.*-bootstrap"
           marketplace:
             id: 21356
