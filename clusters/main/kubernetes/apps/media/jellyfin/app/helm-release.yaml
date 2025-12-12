@@ -35,14 +35,6 @@ spec:
     TZ: Europe/Berlin
     global:
       stopAll: false
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                JELLYFIN_DATA_DIR: /config
-                JELLYFIN_CONFIG_DIR: /config/config
     persistence:
       config:
         volsync:
