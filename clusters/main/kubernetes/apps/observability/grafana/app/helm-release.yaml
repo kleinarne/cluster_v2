@@ -56,9 +56,9 @@ spec:
         volsync:
           enabled: true
           datasource:
-            - name: "$${DS_PROMETHEUS}"
+            - name: "${DS_PROMETHEUS}"
               value: Prometheus
-            - name: "$${VAR_REPLICATIONDESTNAME}"
+            - name: "${VAR_REPLICATIONDESTNAME}"
               value: '.*-dest|.*-bootstrap'
           marketplace:
             # renovate: depName="VolSync Dashboard"
