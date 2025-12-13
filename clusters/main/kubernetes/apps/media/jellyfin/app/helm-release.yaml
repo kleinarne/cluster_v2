@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: jellyfin
-      version: 21.12.9
+      version: 22.2.3
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -37,24 +37,27 @@ spec:
       stopAll: false
     persistence:
       config:
-        mountPath: /config/config
+        volsync:
+          - name: config
+            type: restic
+            credentials: minio
+            dest:
+              enabled: false
+            src:
+              enabled: true
+              trigger:
+                schedule: 5 0 * * *
       data:
         volsync:
           - name: config
             type: restic
             credentials: minio
             dest:
-              enabled: true
-            src:
               enabled: false
+            src:
+              enabled: true
               trigger:
-                schedule: 5 0 * * *
-        enabled: true
-        mountPath: /config/
-      logs:
-        enabled: true
-        mountPath: /config/log
-        type: emptyDir
+                schedule: 6 0 * * *
       media:
         enabled: true
         existingClaim: media-nfs-pvc
