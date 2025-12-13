@@ -35,18 +35,10 @@ spec:
     TZ: Europe/Berlin
     global:
       stopAll: false
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                JELLYFIN_DATA_DIR: /data
-                JELLYFIN_CONFIG_DIR: /config
-                JELLYFIN_LOG_DIR: /logs
-                JELLYFIN_CACHE_DIR: /cache
     persistence:
       config:
+        mountPath: /config/config
+      data:
         volsync:
           - name: config
             type: restic
@@ -54,20 +46,19 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: true
+              enabled: false
               trigger:
                 schedule: 5 0 * * *
-      media:
-        enabled: true
-        existingClaim: media-nfs-pvc
-        mountPath: /mnt/media
-      data:
         enabled: true
         mountPath: /config/
       logs:
         enabled: true
-        mountPath: /logs
+        mountPath: /config/log
         type: emptyDir
+      media:
+        enabled: true
+        existingClaim: media-nfs-pvc
+        mountPath: /mnt/media
     service:
       main:
         type: LoadBalancer
