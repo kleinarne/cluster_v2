@@ -30,34 +30,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    autodiscovery:
-      enabled: true
     TZ: Europe/Berlin
     global:
       stopAll: false
     persistence:
-      config:
-        volsync:
-          - name: config
-            type: restic
-            credentials: minio
-            dest:
-              enabled: false
-            src:
-              enabled: true
-              trigger:
-                schedule: 5 0 * * *
-      data:
-        volsync:
-          - name: config
-            type: restic
-            credentials: minio
-            dest:
-              enabled: false
-            src:
-              enabled: true
-              trigger:
-                schedule: 6 0 * * *
       media:
         enabled: true
         existingClaim: media-nfs-pvc
