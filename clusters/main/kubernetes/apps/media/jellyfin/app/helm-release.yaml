@@ -59,7 +59,8 @@ spec:
         existingClaim: media-nfs-pvc
         mountPath: /mnt/media
       data:
-
+        enabled: true
+        mountPath: /mnt/data_tmp
     service:
       main:
         type: LoadBalancer
