@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: jellyfin
-      version: 22.2.4
+      version: 21.12.9
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -41,7 +41,8 @@ spec:
           containers:
             main:
               env:
-                JELLYFIN_DATA_DIR: /mnt/data_tmp
+                JELLYFIN_DATA_DIR: /data
+                JELLYFIN_CONFIG_DIR: /config
     persistence:
       config:
         volsync:
