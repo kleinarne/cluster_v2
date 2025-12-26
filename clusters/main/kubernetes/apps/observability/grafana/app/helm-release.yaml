@@ -33,10 +33,13 @@ spec:
     TZ: Europe/Berlin
     workload:
       main:
-        env:
-          GF_SECURITY_ADMIN_USER: ${GRAFANA_USERNAME}
-          GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
-          GF_SECURITY_ALLOW_EMBEDDING: true
+        podSpec:
+          containers:
+            main:
+              env:
+              GF_SECURITY_ADMIN_USER: ${GRAFANA_USERNAME}
+              GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
+              GF_SECURITY_ALLOW_EMBEDDING: true
     global:
       stopAll: false
     ingress:
