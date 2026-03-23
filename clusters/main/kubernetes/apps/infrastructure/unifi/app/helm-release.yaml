@@ -44,7 +44,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 32 0 * * *
+                schedule: 32 1 * * *
           - name: data-minio
             type: restic
             credentials: minio
@@ -53,7 +53,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 32 2 * * *
+                schedule: 32 0 * * *
     service:
       comm:
         type: LoadBalancer
