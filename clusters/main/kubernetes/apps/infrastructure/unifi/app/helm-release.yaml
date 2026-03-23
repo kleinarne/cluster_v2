@@ -45,7 +45,7 @@ spec:
               enabled: true
               trigger:
                 schedule: 32 2 * * *
-          - name: data
+          - name: data-minio
             type: restic
             credentials: minio
             dest:
