@@ -44,7 +44,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 32 0 * * *
+                schedule: 31 * * * *
           - name: data-minio
             type: restic
             credentials: minio
