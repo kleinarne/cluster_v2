@@ -1,0 +1,13 @@
+NAME                                      READY   STATUS    RESTARTS   AGE
+pod/snapshot-controller-8b55958f4-d74nc   1/1     Running   0          43h
+
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/snapshot-controller           ClusterIP   172.17.219.169   <none>        8080/TCP   180d
+service/snapshot-controller-webhook   ClusterIP   172.17.157.75    <none>        8443/TCP   180d
+
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/snapshot-controller   1/1     1            1           180d
+
+NAME                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/snapshot-controller-5d4fd487d5   0         0         0       180d
+replicaset.apps/snapshot-controller-8b55958f4    1         1         1       180d

@@ -1,0 +1,16 @@
+NAME                                          STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+jellyfin-config                               Bound     pvc-8a248173-1acf-41bb-b527-b51d937bce59   100Gi      RWO            longhorn       <unset>                 98d
+jellyfin-data                                 Bound     pvc-d03cb671-56ab-487e-9d2b-616a7a008c5a   100Gi      RWO            longhorn       <unset>                 98d
+media-nfs-pvc                                 Bound     media-nfs-pv                               1Mi        RWX            media-nfs      <unset>                 161d
+prowlarr-config                               Bound     pvc-7004a451-4c96-4661-a48c-1af593659f1e   100Gi      RWO            longhorn       <unset>                 161d
+qbittorrent-config                            Bound     pvc-36453d98-ef7e-49f9-b7a4-81a25d08b067   100Gi      RWO            longhorn       <unset>                 161d
+radarr-config                                 Bound     pvc-b6c2cede-a3e4-4e6b-8c3e-5c4ef04fa63e   100Gi      RWO            longhorn       <unset>                 161d
+sonarr-config                                 Bound     pvc-6ea553d8-b21b-4387-b2aa-6a01ea3d5004   100Gi      RWO            longhorn       <unset>                 161d
+volsync-prowlarr-config-config-src            Pending                                                                        longhorn       <unset>                 42h
+volsync-qbittorrent-config-config-src         Pending                                                                        longhorn       <unset>                 42h
+volsync-radarr-config-config-src              Pending                                                                        longhorn       <unset>                 42h
+volsync-sonarr-config-config-src              Pending                                                                        longhorn       <unset>                 42h
+volsync-src-prowlarr-config-config-cache      Bound     pvc-f4665416-a298-48f5-92bb-cff9dc11107d   10Gi       RWO            longhorn       <unset>                 22h
+volsync-src-qbittorrent-config-config-cache   Bound     pvc-12ca9f61-209a-455e-9989-5a694b805bf6   10Gi       RWO            longhorn       <unset>                 22h
+volsync-src-radarr-config-config-cache        Bound     pvc-a1c18b3a-9310-423d-b5e5-6b07961eb0e7   10Gi       RWO            longhorn       <unset>                 22h
+volsync-src-sonarr-config-config-cache        Bound     pvc-6b10b82e-e7ed-42bc-ae61-1386a31ba72c   10Gi       RWO            longhorn       <unset>                 22h

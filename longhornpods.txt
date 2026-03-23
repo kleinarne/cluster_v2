@@ -1,0 +1,28 @@
+NAME                                                READY   STATUS      RESTARTS       AGE
+csi-attacher-589b76ddcb-crh7r                       1/1     Running     0              42h
+csi-attacher-589b76ddcb-fgtgp                       1/1     Running     0              42h
+csi-attacher-589b76ddcb-w9hc2                       1/1     Running     0              42h
+csi-attacher-589b76ddcb-wbjqr                       0/1     Error       5              4d23h
+csi-provisioner-6d744bccdf-579vm                    1/1     Running     0              42h
+csi-provisioner-6d744bccdf-czbgz                    1/1     Running     0              42h
+csi-provisioner-6d744bccdf-hbzhf                    1/1     Running     0              42h
+csi-provisioner-6d744bccdf-qkkzl                    0/1     Error       3              4d5h
+csi-resizer-64c678dd69-2tpc9                        1/1     Running     0              43h
+csi-resizer-64c678dd69-bmrmw                        1/1     Running     0              43h
+csi-resizer-64c678dd69-w99g8                        1/1     Running     0              42h
+csi-snapshotter-559c9d464b-8l2hw                    1/1     Running     0              43h
+csi-snapshotter-559c9d464b-px9sx                    1/1     Running     0              43h
+csi-snapshotter-559c9d464b-vfjpd                    1/1     Running     0              43h
+engine-image-ei-26bab25d-gmxss                      1/1     Running     22 (42h ago)   147d
+engine-image-ei-27581b25-5gt26                      1/1     Running     24 (42h ago)   178d
+engine-image-ei-3154f3aa-tzsw8                      1/1     Running     19 (42h ago)   129d
+engine-image-ei-75a03ec3-f46wp                      1/1     Running     5 (42h ago)    6d2h
+engine-image-ei-b4bcf0a5-pkssg                      1/1     Running     24 (42h ago)   180d
+instance-manager-a3a9301728213fe82bc576c8240eab77   1/1     Running     0              42h
+longhorn-csi-plugin-49kzk                           3/3     Running     0              42h
+longhorn-driver-deployer-75b596857-8ttb7            1/1     Running     0              43h
+longhorn-manager-5m4qc                              2/2     Running     12 (42h ago)   6d2h
+longhorn-ui-7b76c6c96f-4vndp                        1/1     Running     0              43h
+snapshot-cleanup-29569040-k8kfv                     0/1     Completed   0              10h
+snapshot-delete-29568929-6njlf                      0/1     Completed   0              12h
+trim-29569060-vq6td                                 0/1     Completed   0              9h
