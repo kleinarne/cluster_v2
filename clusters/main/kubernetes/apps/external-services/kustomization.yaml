@@ -4,3 +4,4 @@ resources:
   - homeassistant/ks.yaml
   - pegasus/ks.yaml
   - timberwolf/ks.yaml
+  - salpica/ks.yaml
