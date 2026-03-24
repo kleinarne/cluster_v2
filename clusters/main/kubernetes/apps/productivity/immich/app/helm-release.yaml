@@ -42,7 +42,8 @@ spec:
           credentials: garage
           scheduledBackups:
             - name: daily-backup
-              schedule: "0 35 0 * * *"
+#              schedule: "0 35 0 * * *"
+              schedule: "0 38 0 * * *"
               backupOwnerReference: self
               immediate: true
               suspend: false
