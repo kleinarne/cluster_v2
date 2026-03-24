@@ -65,7 +65,7 @@ spec:
     persistence:
       config:
         volsync:
-          - name: config
+          - name: backup
             type: restic
             credentials: garage
             dest:
@@ -81,7 +81,7 @@ spec:
         path: ${NEXTCLOUD_NFS_PATH}
       html:
         volsync:
-          - name: html
+          - name: backup
             type: restic
             credentials: garage
             dest:
