@@ -52,7 +52,7 @@ spec:
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
           enabled: true
-          credentials: minio
+          credentials: garage
           scheduledBackups:
             - name: daily-backup
               schedule: "0 38 0 * * *"
@@ -74,6 +74,15 @@ spec:
               enabled: true
               trigger:
                 schedule: 41 0 * * *
+          - name: backup
+            type: restic
+            credentials: garage
+            dest:
+              enabled: true
+            src:
+              enabled: true
+              trigger:
+                schedule: 41 0 * * *
       data:
         type: nfs
         server: ${TRUENAS_IP}
@@ -89,6 +98,15 @@ spec:
               enabled: true
               trigger:
                 schedule: 43 0 * * *
+          - name: backup
+            type: restic
+            credentials: garage
+            dest:
+              enabled: true
+            src:
+              enabled: true
+              trigger:
+                schedule: 41 0 * * *
     ingress:
       main:
         enabled: true
@@ -128,3 +146,10 @@ spec:
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
+      garage:
+        type: s3
+        url: ${GARAGE_S3_URL}
+        bucket: ${GARAGE_S3_BUCKET}
+        accessKey: ${GARAGE_S3_ACCESSKEY}
+        secretKey: ${GARAGE_S3_SECRETKEY}
+        encrKey: ${GARAGE_S3_ENCRYPTIONKEY}
