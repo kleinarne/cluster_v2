@@ -40,6 +40,15 @@ spec:
             type: restic
             credentials: garage
             dest:
+              enabled: false
+            src:
+              enabled: true
+              trigger:
+                schedule: 13 0 * * *
+          - name: garage
+            type: restic
+            credentials: garage
+            dest:
               enabled: true
             src:
               enabled: true
