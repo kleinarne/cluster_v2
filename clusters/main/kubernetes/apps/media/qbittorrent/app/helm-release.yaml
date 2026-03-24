@@ -45,6 +45,15 @@ spec:
               enabled: true
               trigger:
                 schedule: 1 0 * * *
+          - name: backup
+            type: restic
+            credentials: garage
+            dest:
+              enabled: true
+            src:
+              enabled: true
+              trigger:
+                schedule: 1 0 * * *
       media:
         enabled: true
         existingClaim: media-nfs-pvc
