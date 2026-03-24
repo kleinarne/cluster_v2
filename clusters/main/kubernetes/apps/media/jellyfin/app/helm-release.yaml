@@ -40,7 +40,7 @@ spec:
         mountPath: /mnt/media
       data:
         volsync:
-          - name: backup
+          - name: backupdata
             type: restic
             credentials: garage
             dest:
@@ -51,7 +51,7 @@ spec:
                 schedule: 6 0 * * *
       config:
         volsync:
-          - name: backup
+          - name: backupconfig
             type: restic
             credentials: garage
             dest:
@@ -92,5 +92,3 @@ spec:
         accessKey: ${GARAGE_S3_ACCESSKEY}
         secretKey: ${GARAGE_S3_SECRETKEY}
         encrKey: ${GARAGE_S3_ENCRYPTIONKEY}
-
-
