@@ -44,7 +44,7 @@ spec:
     persistence:
       config:
         volsync:
-          - name: backup
+          - name: config
             type: restic
             credentials: garage
             dest:
