@@ -40,7 +40,7 @@ spec:
         mountPath: /mnt/media
       data:
         volsync:
-          - name: data
+          - name: backup
             type: restic
             credentials: garage
             dest:
@@ -51,7 +51,7 @@ spec:
                 schedule: 6 0 * * *
       config:
         volsync:
-          - name: config
+          - name: backup
             type: restic
             credentials: garage
             dest:
@@ -78,13 +78,6 @@ spec:
             certificateIssuer: domain-0-le-prod
             enabled: true
     credentials:
-      minio:
-        type: s3
-        url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-jellyfin
-        accessKey: ${MINIO_S3_ACCESSKEY}
-        secretKey: ${MINIO_S3_SECRETKEY}
-        encrKey: ${MINIO_S3_ENCRKEY}
       garage:
         type: s3
         url: ${GARAGE_S3_URL}
