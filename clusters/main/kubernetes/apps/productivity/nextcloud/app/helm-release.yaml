@@ -74,7 +74,7 @@ spec:
               enabled: true
               trigger:
                 schedule: 41 0 * * *
-          - name: backup
+          - name: config
             type: restic
             credentials: garage
             dest:
@@ -98,7 +98,7 @@ spec:
               enabled: true
               trigger:
                 schedule: 43 0 * * *
-          - name: backup
+          - name: html
             type: restic
             credentials: garage
             dest:
