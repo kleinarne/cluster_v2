@@ -52,7 +52,7 @@ spec:
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
           enabled: true
-          credentials: garage
+          credentials: minio
           scheduledBackups:
             - name: daily-backup
               schedule: "0 38 0 * * *"
@@ -74,15 +74,6 @@ spec:
               enabled: true
               trigger:
                 schedule: 41 0 * * *
-          - name: config
-            type: restic
-            credentials: garage
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 41 0 * * *
       data:
         type: nfs
         server: ${TRUENAS_IP}
@@ -98,15 +89,6 @@ spec:
               enabled: true
               trigger:
                 schedule: 43 0 * * *
-          - name: html
-            type: restic
-            credentials: garage
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 41 0 * * *
     ingress:
       main:
         enabled: true
