@@ -53,7 +53,7 @@ spec:
             src:
               enabled: true
               trigger:
-                schedule: 30 0 * * *
+                schedule: 58 * * * *
     ingress:
       main:
         enabled: true
