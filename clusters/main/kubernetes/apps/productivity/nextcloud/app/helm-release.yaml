@@ -61,7 +61,7 @@ spec:
               suspend: false
         recovery:
           enabled: true
-          credentials: minio
+          credentials: garage
     persistence:
       config:
         volsync:

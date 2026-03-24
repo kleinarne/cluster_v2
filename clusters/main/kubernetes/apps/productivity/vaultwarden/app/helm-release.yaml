@@ -59,7 +59,7 @@ spec:
         password: ${VAULTWARDEN_CNPG_PASSWORD}
         backups:
           enabled: true
-          credentials: minio
+          credentials: garage
           scheduledBackups:
             - name: daily-backup
               schedule: "0 25 0 * * *"
@@ -68,13 +68,13 @@ spec:
               suspend: false
         recovery:
           enabled: true
-          credentials: minio
+          credentials: garage
     persistence:
       data:
         volsync:
-          - name: config
+          - name: backup
             type: restic
-            credentials: minio
+            credentials: garage
             dest:
               enabled: true
             src:
@@ -110,3 +110,10 @@ spec:
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
+      garage:
+        type: s3
+        url: ${GARAGE_S3_URL}
+        bucket: ${GARAGE_S3_BUCKET}
+        accessKey: ${GARAGE_S3_ACCESSKEY}
+        secretKey: ${GARAGE_S3_SECRETKEY}
+        encrKey: ${GARAGE_S3_ENCRYPTIONKEY}

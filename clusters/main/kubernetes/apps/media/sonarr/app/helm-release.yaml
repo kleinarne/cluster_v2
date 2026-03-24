@@ -36,16 +36,7 @@ spec:
     persistence:
       config:
         volsync:
-          - name: config
-            type: restic
-            credentials: minio
-            dest:
-              enabled: false
-            src:
-              enabled: true
-              trigger:
-                schedule: 13 0 * * *
-          - name: garage
+          - name: backup
             type: restic
             credentials: garage
             dest:
@@ -68,13 +59,6 @@ spec:
             certificateIssuer: domain-0-le-prod
             enabled: true
     credentials:
-      minio:
-        type: s3
-        url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-sonarr
-        accessKey: ${MINIO_S3_ACCESSKEY}
-        secretKey: ${MINIO_S3_SECRETKEY}
-        encrKey: ${MINIO_S3_ENCRKEY}
       garage:
         type: s3
         url: ${GARAGE_S3_URL}
