@@ -73,8 +73,7 @@ spec:
             src:
               enabled: true
               trigger:
-#                schedule: 41 0 * * *
-                schedule: 5 * * * *
+                schedule: 41 0 * * *
       data:
         type: nfs
         server: ${TRUENAS_IP}
@@ -89,8 +88,7 @@ spec:
             src:
               enabled: true
               trigger:
-#                schedule: 43 0 * * *
-                schedule: 5 * * * *
+                schedule: 43 0 * * *
     ingress:
       main:
         enabled: true
@@ -123,13 +121,6 @@ spec:
 #          hosts:
 #            - host: cs.nextcloud.${DOMAIN_0_LOCAL}
     credentials:
-      minio:
-        type: s3
-        url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-nextcloud
-        accessKey: ${MINIO_S3_ACCESSKEY}
-        secretKey: ${MINIO_S3_SECRETKEY}
-        encrKey: ${MINIO_S3_ENCRKEY}
       garage:
         type: s3
         url: ${GARAGE_S3_URL}
