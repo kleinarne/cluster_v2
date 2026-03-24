@@ -52,7 +52,7 @@ spec:
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
           enabled: true
-          credentials: minio
+          credentials: garage
           scheduledBackups:
             - name: daily-backup
               schedule: "0 38 0 * * *"
@@ -67,7 +67,7 @@ spec:
         volsync:
           - name: config
             type: restic
-            credentials: minio
+            credentials: garage
             dest:
               enabled: true
             src:
@@ -82,7 +82,7 @@ spec:
         volsync:
           - name: html
             type: restic
-            credentials: minio
+            credentials: garage
             dest:
               enabled: true
             src:
