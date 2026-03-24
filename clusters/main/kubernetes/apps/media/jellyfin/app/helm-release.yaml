@@ -38,28 +38,28 @@ spec:
         enabled: true
         existingClaim: media-nfs-pvc
         mountPath: /mnt/media
-      data:
-        volsync:
-          - name: garage
-            type: restic
-            credentials: garage
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 6 0 * * *
-      config:
-        volsync:
-          - name: garage
-            type: restic
-            credentials: garage
-            dest:
-              enabled: true
-            src:
-              enabled: true
-              trigger:
-                schedule: 5 0 * * *
+#      data:
+#        volsync:
+#          - name: garage
+#            type: restic
+#            credentials: garage
+#            dest:
+#              enabled: true
+#            src:
+#              enabled: true
+#              trigger:
+#                schedule: 6 0 * * *
+#      config:
+#        volsync:
+#          - name: garage
+#            type: restic
+#            credentials: garage
+#            dest:
+#              enabled: true
+#            src:
+#              enabled: true
+#              trigger:
+#                schedule: 5 0 * * *
     service:
       main:
         type: LoadBalancer
