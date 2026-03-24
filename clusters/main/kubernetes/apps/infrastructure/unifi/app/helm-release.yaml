@@ -36,24 +36,15 @@ spec:
     persistence:
       data:
         volsync:
-          - name: data-garage
+          - name: backup
             type: restic
             credentials: garage
             dest:
-              enabled: false
+              enabled: true
             src:
               enabled: true
               trigger:
                 schedule: 32 0 * * *
-          - name: data-minio
-            type: restic
-            credentials: minio
-            dest:
-              enabled: false
-            src:
-              enabled: true
-              trigger:
-                schedule: 32 2 * * *
     service:
       comm:
         type: LoadBalancer
@@ -92,13 +83,6 @@ spec:
             certificateIssuer: domain-0-le-prod
             enabled: true
     credentials:
-      minio:
-        type: s3
-        url: ${MINIO_S3_URL}
-        bucket: ${MINIO_S3_CLUSTERV3_BUCKET}-unifi-new
-        accessKey: ${MINIO_S3_ACCESSKEY}
-        secretKey: ${MINIO_S3_SECRETKEY}
-        encrKey: ${MINIO_S3_ENCRKEY}
       garage:
         type: s3
         url: ${GARAGE_S3_URL}

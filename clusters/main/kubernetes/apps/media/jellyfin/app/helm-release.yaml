@@ -40,9 +40,9 @@ spec:
         mountPath: /mnt/media
       data:
         volsync:
-          - name: data
+          - name: backup
             type: restic
-            credentials: minio
+            credentials: garage
             dest:
               enabled: true
             src:
@@ -51,9 +51,9 @@ spec:
                 schedule: 6 0 * * *
       config:
         volsync:
-          - name: config
+          - name: backup
             type: restic
-            credentials: minio
+            credentials: garage
             dest:
               enabled: true
             src:
@@ -85,5 +85,12 @@ spec:
         accessKey: ${MINIO_S3_ACCESSKEY}
         secretKey: ${MINIO_S3_SECRETKEY}
         encrKey: ${MINIO_S3_ENCRKEY}
+      garage:
+        type: s3
+        url: ${GARAGE_S3_URL}
+        bucket: ${GARAGE_S3_BUCKET}
+        accessKey: ${GARAGE_S3_ACCESSKEY}
+        secretKey: ${GARAGE_S3_SECRETKEY}
+        encrKey: ${GARAGE_S3_ENCRYPTIONKEY}
 
 
