@@ -78,6 +78,17 @@ spec:
         type: nfs
         server: ${TRUENAS_IP}
         path: ${NEXTCLOUD_NFS_PATH}
+      html:
+        volsync:
+          - name: backup
+            type: restic
+            credentials: garage
+            dest:
+              enabled: false
+            src:
+              enabled: true
+              trigger:
+                schedule: 43 0 * * *
     ingress:
       main:
         enabled: true
