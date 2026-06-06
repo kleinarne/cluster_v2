@@ -79,16 +79,6 @@ spec:
              resources:
                requests:
                  storage: 60Gi
-          volsync:
-            - name: backup
-              type: restic
-              credentials: garage
-              dest:
-                enabled: false
-              src:
-                enabled: true
-                trigger:
-                  schedule: 0 1 * * *
     prometheus-node-exporter:
       fullnameOverride: node-exporter
       prometheus:
