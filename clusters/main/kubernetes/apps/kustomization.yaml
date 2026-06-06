@@ -7,3 +7,4 @@ resources:
   - productivity
   - infrastructure
   - observability
+  - testing/ks.yaml

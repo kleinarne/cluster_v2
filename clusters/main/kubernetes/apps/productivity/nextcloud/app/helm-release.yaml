@@ -89,7 +89,23 @@ spec:
               enabled: true
               trigger:
                 schedule: 43 0 * * *
-                i
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: internal
+        hosts:
+          - host: nextcloud.${DOMAIN_0_LOCAL}
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: nextcloud.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: domain-0-le-prod
+            enabled: true
 #    addons:
 #      codeserver:
 #        enabled: true
