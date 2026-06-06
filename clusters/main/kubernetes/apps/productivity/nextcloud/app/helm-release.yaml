@@ -92,6 +92,7 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: internal
         hosts:
           - host: nextcloud.${DOMAIN_0_LOCAL}
             paths:
@@ -102,10 +103,6 @@ spec:
               - path: /
                 pathType: Prefix
         integrations:
-          traefik:
-            enabled: false
-          nginx:
-            enabled: true
           certManager:
             certificateIssuer: domain-0-le-prod
             enabled: true
