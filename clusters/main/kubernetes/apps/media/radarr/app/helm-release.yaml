@@ -40,7 +40,7 @@ spec:
             main:
               resources:
                 requests:
-                  cpu: 75m
+                  cpu: 50m
     persistence:
       config:
         volsync:
