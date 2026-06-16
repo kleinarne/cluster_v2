@@ -92,7 +92,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: internal
+        ingressClassName: external
         hosts:
           - host: nextcloud.${DOMAIN_0_LOCAL}
             paths:
