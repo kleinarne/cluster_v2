@@ -37,18 +37,16 @@ spec:
       allowSignups: false
       smtp:
         enabled: true
-        host: ${SMTP_SERVER}
-        from: ${SMTP_SENDER_EMAIL}
-        fromName: ${SMTP_SENDER_NAME}
+        host: ${SCALEWAY_SERVER}
+        from: ${SCALEWAY_SENDER_EMAIL}
+        fromName: ${SCALEWAY_SENDER_NAME}
         security: force_tls
-        port: 587
+        port: 465
         authMechanism: Login
         heloName: ""
         timeout: 15
-        invalidHostname: true
-        invalidCertificate: true
-        user: ${SMTP_USERNAME}
-        password: ${SMTP_PASSWORD}
+        user: ${SCALEWAY_USERNAME}
+        password: ${SCALEWAY_PASSWORD}
       push:
         enabled: true
         installationId: ${VAULTWARDEN_PUSHID}
