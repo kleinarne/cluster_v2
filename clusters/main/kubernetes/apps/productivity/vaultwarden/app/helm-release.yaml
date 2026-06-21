@@ -39,7 +39,7 @@ spec:
         enabled: true
         host: ${SCALEWAY_SERVER}
         from: ${SCALEWAY_SENDER_EMAIL}
-        fromName: ${SCALEWAY_SENDER_NAME}
+        fromName: Vaultwarden Admin (at ${DOMAIN_0})
         security: force_tls
         port: 465
         authMechanism: Login
