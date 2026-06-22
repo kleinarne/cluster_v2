@@ -39,7 +39,7 @@ spec:
         default_phone_region: DE
         accessIP: ${NGINX_INTERNAL_IP}
       collabora:
-        enabled: true
+        enabled: false
         username: ${NEXTCLOUD_COLLABORA_USERNAME}
         password: ${NEXTCLOUD_COLLABORA_PASSWORD}
         dictionaries:
