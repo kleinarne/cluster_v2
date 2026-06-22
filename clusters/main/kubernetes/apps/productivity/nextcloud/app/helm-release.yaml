@@ -103,7 +103,7 @@ spec:
             certificateIssuer: domain-0-le-prod
             enabled: true
       legacy:
-        enabled: false
+        enabled: true
         ingressClassName: external
         hosts:
           - host: nextcloud.${DOMAIN_0_LOCAL}
