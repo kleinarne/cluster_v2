@@ -6,5 +6,3 @@ resources:
   - media
   - productivity
   - infrastructure
-  - observability
-  - testing/ks.yaml
