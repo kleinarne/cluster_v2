@@ -8,3 +8,4 @@ resources:
   - infrastructure
   - observability
   - testing/ks.yaml
+  - librespeed/ks.yaml
