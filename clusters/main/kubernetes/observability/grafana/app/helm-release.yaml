@@ -41,7 +41,7 @@ spec:
                 GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
                 GF_SECURITY_ALLOW_EMBEDDING: true
     global:
-      stopAll: true
+      stopAll: false
     ingress:
       main:
         enabled: true
