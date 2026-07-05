@@ -10,4 +10,3 @@ resources:
   - volsync/ks.yaml
   - openebs/ks.yaml
 #  - system-upgrade
-  - spegel/ks.yaml
