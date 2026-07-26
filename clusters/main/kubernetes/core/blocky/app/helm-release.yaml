@@ -39,9 +39,9 @@ spec:
         lists:
         - https://easylist.to/easylist/easylist.txt
       clientGroupsBlock:
-      - name: default
-        groups:
-        - mylist
+        - name: default
+          groups:
+            - mylist
     service:
       dns:
         externalTrafficPolicy: Local
