@@ -35,9 +35,13 @@ spec:
       stopAll: false
     blocking:
       blacklist:
-        - name: my-default
+      - name: mylist
         lists:
-          - https://easylist.to/easylist/easylist.txt
+        - https://easylist.to/easylist/easylist.txt
+      clientGroupsBlock:
+      - name: default
+        groups:
+        - mylist
     service:
       dns:
         externalTrafficPolicy: Local
