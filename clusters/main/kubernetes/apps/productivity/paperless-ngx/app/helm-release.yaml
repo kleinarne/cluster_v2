@@ -50,7 +50,7 @@ spec:
         mode: recovery
         password: ${PAPERLESS_CNPG_PASSWORD}
         backups:
-          enabled: true
+          enabled: false
           credentials: garage
           scheduledBackups:
             - name: daily-backup
@@ -68,9 +68,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 48 0 * * *
       media:
@@ -79,9 +79,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 50 0 * * *
       consume:

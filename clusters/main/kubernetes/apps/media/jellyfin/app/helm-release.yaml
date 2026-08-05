@@ -44,9 +44,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 6 0 * * *
       config:
@@ -55,9 +55,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 5 0 * * *
     service:

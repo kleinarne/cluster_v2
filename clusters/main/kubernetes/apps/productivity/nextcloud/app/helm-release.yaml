@@ -51,7 +51,7 @@ spec:
         mode: recovery
         password: ${NEXTCLOUD_CNPG_PASSWORD}
         backups:
-          enabled: true
+          enabled: false
           credentials: garage
           scheduledBackups:
             - name: daily-backup
@@ -69,9 +69,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 41 0 * * *
       data:
@@ -84,9 +84,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 43 0 * * *
     ingress:

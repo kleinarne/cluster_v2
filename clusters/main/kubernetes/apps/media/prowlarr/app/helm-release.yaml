@@ -40,9 +40,9 @@ spec:
             type: restic
             credentials: garage
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
               trigger:
                 schedule: 9 0 * * *
     ingress:
